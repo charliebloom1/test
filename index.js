@@ -10,10 +10,11 @@ const PORT = process.env.PORT || 5000
 //  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 
-
+var options = {
+    index: 'map.html'
+};
 
 express()
-    .use(express.static(path.join(__dirname, 'public')))
-    .get('/', (req, res) => res.render('public/map.html'))
+    .use(express.static(path.join(__dirname, 'public'), options))
     .listen(PORT, () => console.log(`Listening on ${PORT}`))
 
